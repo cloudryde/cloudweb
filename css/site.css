@@ -1,0 +1,261 @@
+:root {
+  --font-stack-primary: Montserrat, sans-serif;
+  --dodger-blue: #4c7cf3;
+  --bright-cyan: #4afdfd;
+  --pale-grey: #ededf0;
+  --aqua-green: #0ddca1;
+  --shocking-pink: #ff03a7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: linear-gradient(to bottom, var(--dodger-blue), #53a0fd 48%, #51ecbc);
+  font-family: var(--font-stack-primary);
+  min-height: 100vh;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: var(--dodger-blue);
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  outline: 0;
+  padding: 0;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.sectionTitle::after {
+  display: block;
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  background: var(--bright-cyan);
+  content: '';
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 15px; 
+  margin: auto;
+  max-width: 1200px;
+  min-width: 100%;
+  padding: 0 100px;
+}
+
+.main .content {
+  margin-bottom: 125px;
+}
+
+.siteHeader {
+  padding: 60px 0 80px;
+}
+
+.logo {
+  background: url('../img/logo.svg');
+  height: 26px;
+  width: 193px;
+}
+
+.nav {
+  display: flex;
+  grid-column: end;
+  justify-content: space-between;
+  width: 450px;
+}
+
+.navLink {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.navLink.active {
+  color: var(--bright-cyan);
+}
+
+.navLink::after {
+  background: #fff;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transition: .3s;
+  width: 0;
+}
+
+.navLink:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.navLink.active::after {
+  background: var(--bright-cyan);
+}
+
+.copy {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.details {
+  grid-column: span 5;
+}
+
+.etiquette {
+  grid-template-rows: auto auto;
+}
+
+.etiquetteRow {
+  display: flex;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  padding: 0 30px;
+}
+
+.etiquetteSection {
+  text-align: center;
+  padding: 0 20px;
+  width: 33%;
+}
+
+.etiquetteContent {
+  grid-template-rows: auto auto;
+}
+
+[class^=etiquetteIcon] {
+  display: inline-block;
+}
+
+.etiquetteIcon-sidewalk {
+  background: url('../img/sidewalk.svg') no-repeat;
+  height: 235px;
+  width: 246px;
+}
+
+.etiquetteIcon-upright {
+  background: url('../img/upright.svg') no-repeat;
+  height: 220px;
+  width: 165px;
+}
+
+.etiquetteIcon-safe {
+  background: url('../img/safe.svg') no-repeat;
+  height: 245px;
+  width: 203px;
+}
+
+.etiquetteTitle {
+  font-size: 22px;
+  line-height: 1.27;
+}
+
+.etiquetteCopy {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.suggestBackground {
+  background: url('../img/map.png') no-repeat center center;
+  background-size: 989px 558px;
+}
+
+.suggest {
+  grid-column: 1 / -1;
+  padding: 165px 0;
+}
+
+.suggestHeader {
+  font-size: 36px;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.suggestContainer {
+  --button-width: 200px;
+  --input-padding: 20px;
+  margin: auto;
+  position: relative;
+  width: 80%;
+}
+
+.suggestButton {
+  border-radius: 10px;
+  height: 55px;
+  position: absolute;
+  right: var(--input-padding);
+  top: 18px;
+  width: var(--button-width);
+}
+
+.suggestInput {
+  background-color: #fff;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 18px 0 var(--bright-cyan);
+  color: #364b7f;
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  height: 90px;
+  padding: 15px calc(var(--button-width) + (var(--input-padding)*2)) 15px 30px;
+  transition: box-shadow .2s ease;
+  width: 100%;
+}
+
+.suggestInput::placeholder {
+  color: var(--pale-grey);
+}
+
+.suggestInput:focus {
+  box-shadow: 0 0 18px 0 var(--dodger-blue);
+  outline: 0;
+}
+
+.footer {
+  align-items: center;
+  background: var(--dodger-blue);
+  display: flex;
+  height: 100px;
+}
+
+.footerNav {
+  font-size: 12px;
+  grid-column: -6 / span 6;
+}
+
+@media (max-width: 900px) {
+  .etiquetteRow {
+    display: block;
+  }
+
+  .etiquetteSection {
+    margin: auto;
+    padding: 30px;
+    width: 100%;
+  }
+}
