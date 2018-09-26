@@ -1,4 +1,6 @@
 :root {
+  --icon-modifier: .65;
+  --grid-gap: 24px;
   --font-stack-primary: Montserrat, sans-serif;
   --dodger-blue: #4c7cf3;
   --bright-cyan: #4afdfd;
@@ -57,11 +59,11 @@ button {
 .content {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 15px; 
+  grid-column-gap: var(--grid-gap); 
   margin: auto;
-  max-width: 1200px;
-  min-width: 100%;
+  max-width: 1400px;
   padding: 0 100px;
+  width: 100%;
 }
 
 .main .content {
@@ -130,17 +132,31 @@ button {
 }
 
 .etiquetteRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: var(--grid-gap);
+  grid-row-gap: var(--grid-gap);
   grid-row-start: 2;
   grid-column-start: 1;
   grid-column-end: -1;
-  padding: 0 30px;
+}
+
+@media (max-width: 1200px) {
+  .etiquetteRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .etiquetteSection {
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  color: var(--dodger-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
   text-align: center;
-  padding: 0 20px;
-  width: 33%;
 }
 
 .etiquetteContent {
@@ -149,32 +165,36 @@ button {
 
 [class^=etiquetteIcon] {
   display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .etiquetteIcon-sidewalk {
-  background: url('../img/sidewalk.svg') no-repeat;
-  height: 235px;
-  width: 246px;
+  background-image: url('../img/sidewalk.svg');
+  height: calc(235px * var(--icon-modifier));
+  width: calc(246px * var(--icon-modifier));
 }
 
 .etiquetteIcon-upright {
-  background: url('../img/upright.svg') no-repeat;
-  height: 220px;
-  width: 165px;
+  background-image: url('../img/upright.svg');
+  height: calc(220px * var(--icon-modifier));
+  width: calc(165px * var(--icon-modifier));
 }
 
 .etiquetteIcon-safe {
-  background: url('../img/safe.svg') no-repeat;
-  height: 245px;
-  width: 203px;
+  background-image: url('../img/safe.svg');
+  height: calc(245px * var(--icon-modifier));
+  width: calc(203px * var(--icon-modifier));
 }
 
 .etiquetteTitle {
+  color: inherit;
   font-size: 22px;
   line-height: 1.27;
 }
 
 .etiquetteCopy {
+  /*color: inherit;*/
   font-size: 16px;
   line-height: 1.5;
 }
@@ -248,14 +268,20 @@ button {
   grid-column: -6 / span 6;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .etiquetteRow {
-    display: block;
+    grid-template-columns: 1fr;
   }
 
   .etiquetteSection {
     margin: auto;
     padding: 30px;
     width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .content {
+    padding: 0 30px;
   }
 }
