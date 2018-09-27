@@ -20,10 +20,11 @@
 
 html {
   background: linear-gradient(to bottom, var(--dodger-blue), #53a0fd 48%, #51ecbc 95%);
+  color: #fff;
   font-family: var(--font-stack-primary);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  color: #fff;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -111,7 +112,7 @@ img {
   color: #fff;
   font-size: 32px;
   font-weight: bold;
-  margin: 0 0 20px;
+  margin: 0 0 38px;
   padding-bottom: 12px;
   position: relative;
 }
@@ -190,15 +191,15 @@ img {
 .copy {
   font-size: 18px;
   line-height: 1.55;
-  margin: 30px 0 35px;
+  margin: 0 0 40px;
 }
 
 .details {
   grid-column: span 5;
 }
 
-.scooterDetails {
-  padding-top: 75px;
+.imageryContent {
+  align-items: center;
 }
 
 .scooterImage {
@@ -296,7 +297,7 @@ img {
   height: 36px;
   opacity: var(--carousel-transparency);
   position: absolute;
-  top: calc(50% - 36px/2);
+  top: calc(50% - 36px);
   transition: opacity .15s ease;
   width: 20px;
 }
@@ -408,7 +409,8 @@ img {
   display: flex;
   font-size: 12px;
   grid-column: span 9;
-  grid-column-start: -1;
+  grid-column-end: -1;
+  justify-content: flex-end;
 }
 
 .footerNav .socialIcon {
@@ -439,10 +441,6 @@ img {
     grid-column-end: -1;
   }
 
-  .details {
-    grid-column: span 6;
-  }
-
   .suggestContainer {
     width: 100%;
   }
@@ -469,10 +467,6 @@ img {
 
   .details {
     grid-column: span 5;
-  }
-
-  .scooterDetails {
-    padding-top: 0;
   }
 }
 
