@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="36px" viewBox="0 0 21 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Path Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CLOUD-Web-(D)" transform="translate(-1344.000000, -1935.000000)" fill="#4AFDFD" fill-rule="nonzero">
+            <g id="Section" transform="translate(119.000000, 1624.000000)">
+                <path d="M1231.20798,329 L1244.81827,315.389703 C1245.82248,314.385498 1245.82248,312.757359 1244.81827,311.753154 C1243.81407,310.748949 1242.18593,310.748949 1241.18173,311.753154 L1225.75315,327.181725 C1224.74895,328.185931 1224.74895,329.814069 1225.75315,330.818275 L1241.18173,346.246846 C1242.18593,347.251051 1243.81407,347.251051 1244.81827,346.246846 C1245.82248,345.242641 1245.82248,343.614502 1244.81827,342.610297 L1231.20798,329 Z" id="Path-Copy" transform="translate(1235.285714, 329.000000) scale(-1, 1) translate(-1235.285714, -329.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
