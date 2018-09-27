@@ -62,6 +62,20 @@ button {
   background-image: url('../img/Playstore - Hover.svg');
 }
 
+.socialIcon {
+  display: inline-block;
+  height: 31px;
+  width: 33px;
+}
+
+.socialIcon-Instagram {
+  background-image: url('../img/Instagram.svg');
+}
+
+.socialIcon-Facebook {
+  background-image: url('../img/Facebook.svg');
+}
+
 .sectionTitle {
   color: #fff;
   font-size: 32px;
@@ -298,8 +312,15 @@ button {
 }
 
 .footerNav {
+  align-items: center;
+  display: flex;
   font-size: 12px;
-  grid-column: -6 / span 6;
+  grid-column: span 9;
+  grid-column-start: -1;
+}
+
+.footerNav .socialIcon {
+  margin-left: 10px;
 }
 
 @media (max-width: 760px) {
