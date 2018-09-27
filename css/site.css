@@ -36,6 +36,32 @@ button {
   padding: 0;
 }
 
+.downloadIcon {
+  display: block;
+  height: 65px;
+  width: 210px;
+}
+
+.downloadIcon:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.downloadIcon-Apple {
+  background-image: url('../img/App Store.svg');
+}
+
+.downloadIcon-Apple:hover {
+  background-image: url('../img/App Store - Hover.svg');
+}
+
+.downloadIcon-Google {
+  background-image: url('../img/Playstore.svg');
+}
+
+.downloadIcon-Google:hover {
+  background-image: url('../img/Playstore - Hover.svg');
+}
+
 .sectionTitle {
   color: #fff;
   font-size: 32px;
@@ -119,7 +145,7 @@ button {
 .copy {
   font-size: 18px;
   line-height: 1.55;
-  margin: 30px 0;
+  margin: 30px 0 35px;
 }
 
 .details {
