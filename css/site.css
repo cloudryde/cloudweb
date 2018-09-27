@@ -1,6 +1,7 @@
 :root {
   --icon-modifier: .65;
   --grid-gap: 24px;
+  --grid-column-count: 12;
   --font-stack-primary: Montserrat, sans-serif;
   --dodger-blue: #4c7cf3;
   --bright-cyan: #4afdfd;
@@ -129,7 +130,7 @@ img {
 
 .content {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(var(--grid-column-count), 1fr);
   grid-column-gap: var(--grid-gap); 
   margin: auto;
   max-width: var(--content-width);
@@ -286,6 +287,7 @@ img {
   justify-self: end;
   max-width: 395px;
   position: relative;
+  text-align: center;
 }
 
 .carouselArrow {
@@ -313,7 +315,8 @@ img {
 }
 
 .carouselProgress {
-  margin-top: 60px;
+  display: inline-block;
+  margin-top: 40px;
   padding: 0;
 }
 
@@ -322,7 +325,6 @@ img {
   border-radius: 3px;
   display: inline-block;
   height: 6px;
-  margin-right: 5px;
   opacity: var(--carousel-transparency);
   vertical-align: top;
   width: 60px;
@@ -330,6 +332,10 @@ img {
 
 .carouselIndicator.active {
   opacity: 1;
+}
+
+.carouselIndicator:not(:last-child) {
+  margin-right: 5px;
 }
 
 .suggestBackground {
@@ -409,6 +415,18 @@ img {
   margin-left: 10px;
 }
 
+.mobileNavArrow {
+  background: url('../img/down-arrow.svg') no-repeat center center;
+  cursor: pointer;
+  display: none;
+  grid-column-start: -1;
+  height: 10px;
+  margin-right: -30px;
+  margin-top: -15px;
+  padding: 30px;
+  width: 18px;
+}
+
 @media (max-width: 1350px) {
   :root {
     --content-gutter: 75px;
@@ -423,6 +441,32 @@ img {
 
   .details {
     grid-column: span 6;
+  }
+
+  .suggestContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 910px) {
+  :root {
+    --grid-column-count: 6;
+  }
+
+  .mobileNavArrow {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .details {
+    grid-column: span 5;
+  }
+
+  .scooterDetails {
+    padding-top: 0;
   }
 }
 
