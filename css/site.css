@@ -283,6 +283,8 @@ img {
 .carouselContainer {
   grid-column: span 5;
   grid-column-end: -1;
+  justify-self: end;
+  max-width: 395px;
   position: relative;
 }
 
