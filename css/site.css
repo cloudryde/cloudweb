@@ -7,6 +7,9 @@
   --pale-grey: #ededf0;
   --aqua-green: #0ddca1;
   --shocking-pink: #ff03a7;
+  --noname-darkblue: #364b7f;
+  --content-gutter: 0;
+  --content-width: 1200px;
 }
 
 * {
@@ -14,7 +17,7 @@
 }
 
 html {
-  background: linear-gradient(to bottom, var(--dodger-blue), #53a0fd 48%, #51ecbc);
+  background: linear-gradient(to bottom, var(--dodger-blue), #53a0fd 48%, #51ecbc 95%);
   font-family: var(--font-stack-primary);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -34,6 +37,11 @@ button {
   font-weight: bold;
   outline: 0;
   padding: 0;
+  transition: background .15s ease;
+}
+
+button:hover {
+  background: var(--noname-darkblue);
 }
 
 .downloadIcon {
@@ -102,8 +110,8 @@ button {
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: var(--grid-gap); 
   margin: auto;
-  max-width: 1400px;
-  padding: 0 100px;
+  max-width: var(--content-width);
+  padding: 0 var(--content-gutter);
   width: 100%;
 }
 
@@ -250,11 +258,12 @@ button {
 .suggestBackground {
   background: url('../img/map.png') no-repeat center center;
   background-size: 989px 558px;
+  margin-bottom: 40px;
 }
 
 .suggest {
   grid-column: 1 / -1;
-  padding: 165px 0;
+  padding: 165px 0 260px;
 }
 
 .suggestHeader {
@@ -285,7 +294,7 @@ button {
   border: 0;
   border-radius: 20px;
   box-shadow: 0 0 18px 0 var(--bright-cyan);
-  color: #364b7f;
+  color: var(--noname-darkblue);
   display: block;
   font-size: 36px;
   font-weight: bold;
@@ -321,6 +330,12 @@ button {
 
 .footerNav .socialIcon {
   margin-left: 10px;
+}
+
+@media (max-width: 1350px) {
+  :root {
+    --content-gutter: 75px;
+  }
 }
 
 @media (max-width: 760px) {
