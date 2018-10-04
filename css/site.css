@@ -290,11 +290,11 @@ img {
   font-size: 20px;
   vertical-align: bottom;
   line-height: 1.27;
-
+  padding-top: 24px;
 }
 
 .etiquetteCopy {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
