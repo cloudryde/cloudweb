@@ -113,7 +113,7 @@ img {
   color: #fff;
   font-size: 32px;
   font-weight: bold;
-  margin: 0 0 38px;
+  margin: 0 0 86px;
   padding-bottom: 12px;
   position: relative;
 }
@@ -141,7 +141,7 @@ img {
 }
 
 .main .content {
-  margin-bottom: 125px;
+  margin-bottom: 136px;
 }
 
 .siteHeader {
@@ -241,13 +241,11 @@ img {
 .etiquetteSection {
   align-items: center;
   background: #fff;
-  border-radius: 10px;
-  color: var(--dodger-blue);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 20px;
+  color: var(--noname-darkblue);
   padding: 30px;
-  text-align: center;
+  vertical-align: top;
+  text-align: left;
 }
 
 .etiquetteContent {
@@ -262,35 +260,47 @@ img {
 
 .etiquetteIcon-sidewalk {
   background-image: url('../img/sidewalk.svg');
-  height: calc(235px * var(--icon-modifier));
-  width: calc(246px * var(--icon-modifier));
+  height: calc(360px * var(--icon-modifier));
+  width: calc(360px * var(--icon-modifier));
+  margin: -60px auto 0;
 }
 
 .etiquetteIcon-upright {
   background-image: url('../img/upright.svg');
-  height: calc(220px * var(--icon-modifier));
-  width: calc(165px * var(--icon-modifier));
+  height: calc(360px * var(--icon-modifier));
+  width: calc(360px * var(--icon-modifier));
+  margin: -60px auto 0;
 }
 
 .etiquetteIcon-safe {
   background-image: url('../img/safe.svg');
-  height: calc(245px * var(--icon-modifier));
-  width: calc(203px * var(--icon-modifier));
+  height: calc(360px * var(--icon-modifier));
+  width: calc(360px * var(--icon-modifier));
+  margin: -60px auto 0;
+}
+
+.etiquetteIcon-aware {
+  background-image: url('../img/aware.svg');
+  height: calc(360px * var(--icon-modifier));
+  width: calc(360px * var(--icon-modifier));
+  margin: -60px auto 0;
 }
 
 .etiquetteTitle {
-  color: inherit;
-  font-size: 22px;
+  color: var(--dodger-blue);
+  font-size: 20px;
+  vertical-align: bottom;
   line-height: 1.27;
+
 }
 
 .etiquetteCopy {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .carouselContainer {
-  max-width: 395px;
+  max-width: 384px;
   position: relative;
   text-align: center;
 }
