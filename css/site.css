@@ -242,7 +242,7 @@ img {
   background: #fff;
   border-radius: 20px;
   color: var(--noname-darkblue);
-  padding: 30px;
+  padding: 20px;
   vertical-align: top;
   text-align: left;
 }
@@ -252,37 +252,59 @@ img {
 }
 
 [class^=etiquetteIcon] {
+  border-radius: 20px;
   display: block;
+  position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  margin: -60px auto 0;
+  padding-top: 100%;
+  transform: scale(1);
+  transition: transform .3s ease;
+  width: 100%;
+}
+
+[class^=etiquetteIcon]::after {
+  display: block;
+  position: absolute;
+  background-size: 100% 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  opacity: 0;
+  transform: scale(1);
+  transition: transform .3s ease;
+}
+
+[class^=etiquetteIcon]:hover {
+  box-shadow: 0 4px 18px rgba(85, 152, 247, .4);
+  transform: scale(1.07);
+}
+
+[class^=etiquetteIcon]:hover::after {
+  opacity: 1;
+}
+
+[class^=etiquetteIcon]::after {
+  background-image: url('../img/check.svg');
 }
 
 .etiquetteIcon-sidewalk {
   background-image: url('../img/sidewalk.svg');
-  height: calc(360px * var(--icon-modifier));
-  width: calc(360px * var(--icon-modifier));
-  margin: -60px auto 0;
 }
 
 .etiquetteIcon-upright {
   background-image: url('../img/upright.svg');
-  height: calc(360px * var(--icon-modifier));
-  width: calc(360px * var(--icon-modifier));
-  margin: -60px auto 0;
 }
 
 .etiquetteIcon-safe {
   background-image: url('../img/safe.svg');
-  height: calc(360px * var(--icon-modifier));
-  width: calc(360px * var(--icon-modifier));
-  margin: -60px auto 0;
 }
 
 .etiquetteIcon-aware {
   background-image: url('../img/aware.svg');
-  height: calc(360px * var(--icon-modifier));
-  width: calc(360px * var(--icon-modifier));
-  margin: -60px auto 0;
 }
 
 .etiquetteTitle {
@@ -290,7 +312,7 @@ img {
   font-size: 20px;
   vertical-align: bottom;
   line-height: 1.27;
-  padding-top: 24px;
+  padding-top: 10px;
 }
 
 .etiquetteCopy {
@@ -563,7 +585,7 @@ img {
   .etiquetteSection {
     margin: auto;
     margin-top: 30px;
-    padding: 30px;
+    padding: 20px;
     width: 300px;
   }
 }
