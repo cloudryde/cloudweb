@@ -113,7 +113,7 @@ img {
   color: #fff;
   font-size: 32px;
   font-weight: bold;
-  margin: 0 0 86px;
+  margin: 0 0 40px;
   padding-bottom: 12px;
   position: relative;
 }
@@ -141,7 +141,7 @@ img {
 }
 
 .main .content {
-  margin-bottom: 136px;
+  margin-bottom: 170px;
 }
 
 .siteHeader {
@@ -220,6 +220,10 @@ img {
 
 .etiquette {
   grid-template-rows: auto auto;
+}
+
+.etiquetteSectionTitle {
+  margin-bottom: 90px;
 }
 
 .etiquetteRow {
@@ -594,6 +598,24 @@ img {
   .details {
     grid-column: span var(--grid-column-count);
   }
+
+  .suggestButton {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .suggestInput {
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 10px;
+    height: 70px;
+    padding: 20px;
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 550px) {
