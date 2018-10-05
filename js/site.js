@@ -41,6 +41,6 @@ let toggleMobileNav = function() {
 
 let mobileArrow = document.getElementsByClassName('js-mobile-nav-arrow')[0];
 let mobileNav = document.getElementsByClassName('js-site-nav')[0];
-mobileArrow.addEventListener('touchstart', toggleMobileNav);
+// mobileArrow.addEventListener('touchstart', toggleMobileNav);
 mobileArrow.addEventListener('click', toggleMobileNav);
 
