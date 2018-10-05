@@ -228,7 +228,7 @@ img {
 
 .etiquetteRow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: var(--grid-gap);
   grid-row-gap: var(--grid-gap);
   grid-row-start: 2;
@@ -243,10 +243,10 @@ img {
 }
 
 .etiquetteSection {
-  background: #fff;
+/*  background: #fff;*/
   border-radius: 20px;
-  color: var(--noname-darkblue);
-  padding: 20px;
+  color: #fff;
+  padding: 50px;
   vertical-align: top;
   text-align: left;
 }
@@ -278,17 +278,18 @@ img {
   height: 100%;
   content: '';
   opacity: 0;
-  transform: scale(1);
+  transform: scale(1..07);
   transition: transform .3s ease;
 }
 
 [class^=etiquetteIcon]:hover {
   box-shadow: 0 4px 18px rgba(85, 152, 247, .4);
-  transform: scale(1.07);
+  transform: scale(.93);
 }
 
 [class^=etiquetteIcon]:hover::after {
   opacity: 1;
+  transform: scale(1);
 }
 
 [class^=etiquetteIcon]::after {
@@ -312,16 +313,18 @@ img {
 }
 
 .etiquetteTitle {
-  color: var(--dodger-blue);
+  color: #fff;
   font-size: 20px;
   vertical-align: bottom;
   line-height: 1.27;
   padding-top: 10px;
+  text-align: center;
 }
 
 .etiquetteCopy {
   font-size: 16px;
   line-height: 1.6;
+  text-align: center;
 }
 
 .carouselContainer {
@@ -501,7 +504,9 @@ img {
     grid-column: span 3;
   }
 
+  .scooterContainer,
   .carouselContainer {
+    margin: auto auto 40px;
     max-width: 295px;
   }
 
@@ -616,6 +621,22 @@ img {
     width: 100%;
   }
 
+  .footer {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .footerNav {
+    display: block; /* remove flexbox */
+  }
+
+  .socialIcons {
+    margin-top: 20px;
+  }
+
+  .socialIcon:first-child {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 550px) {
