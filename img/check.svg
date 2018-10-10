@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="260px" height="260px" viewBox="0 0 260 260" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>Artboard Copy 4</title>
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 6</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Artboard-Copy-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle" stroke="#0DDCA1" stroke-width="11" fill="#4C7CF3" x="5.5" y="5.5" width="249" height="249" rx="124.5"></rect>
-        <path d="M174.005988,95.1131916 L114.185629,154.718404 C113.862275,155.042345 113.215569,155.042345 112.892216,154.718404 L87.994012,129.774918 C85.4071856,127.183387 81.5269461,127.183387 78.9401198,129.774918 C76.3532934,132.366449 76.3532934,136.253746 78.9401198,138.845277 L103.838323,163.788762 C106.42515,166.380293 109.982036,168 113.538922,168 C117.419162,168 120.652695,166.704235 123.239521,163.788762 L183.05988,103.859609 C185.646707,101.268078 185.646707,97.3807812 183.05988,94.7892503 C180.473054,92.1977193 176.592814,92.5216607 174.005988,95.1131916 Z" id="Shape" fill="#0DDCA1" fill-rule="nonzero"></path>
+    <defs>
+        <linearGradient x1="49.9996369%" y1="-109.281743%" x2="49.434194%" y2="331.798986%" id="linearGradient-1">
+            <stop stop-color="#4C7CF3" offset="0%"></stop>
+            <stop stop-color="#53A0FD" offset="47.5247532%"></stop>
+            <stop stop-color="#51ECBC" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="19" y="19" width="222" height="222" rx="30"></rect>
+        <filter x="-14.9%" y="-14.9%" width="129.7%" height="129.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.292093217   0 0 0 0 0.99387747   0 0 0 0 0.99262172  0 0 0 0.846410779 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+        </g>
+        <path d="M169.125749,97.9159604 L115.398204,151.958019 C115.107784,152.251726 114.526946,152.251726 114.236527,151.958019 L91.8742515,129.342593 C89.5508982,126.992938 86.0658683,126.992938 83.742515,129.342593 C81.4191617,131.692247 81.4191617,135.216729 83.742515,137.566384 L106.10479,160.181811 C108.428144,162.531466 111.622754,164 114.817365,164 C118.302395,164 121.206587,162.825173 123.52994,160.181811 L177.257485,105.846045 C179.580838,103.49639 179.580838,99.9719083 177.257485,97.6222536 C174.934132,95.2725988 171.449102,95.5663057 169.125749,97.9159604 Z" id="Shape" stroke="#FFFFFF" fill="#FFFFFF" fill-rule="nonzero"></path>
     </g>
 </svg>
