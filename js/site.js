@@ -1,29 +1,55 @@
-window.onscroll = function() {
-  let siteHeader = document.getElementsByClassName('js-siteHeader')[0];
-};
-
 let rand = function() {
   return Math.floor(Math.random() * Math.floor(100));
 }
 
+let map = Array.prototype.map;
+let forEach = Array.prototype.forEach;
+
+let clickEvent = typeof window.ontouchstart === 'undefined' ? 'click' : 'touchstart';
+let hoverEvent = typeof window.ontouchstart === 'undefined' ? 'mouseenter' : 'touchstart';
+
+// nav scroll
+let navLinks = document.getElementsByClassName('js-nav-link');
+map.call(navLinks, function(el) {
+  let hash = el.getAttribute('href');
+  let scrollToEl = document.getElementById(hash.substring(1));
+
+  if (!scrollToEl) {
+    return;
+  }
+
+  el.addEventListener(clickEvent, function(event) {
+    event.preventDefault();
+    // window.location.hash = hash;
+    window.scroll({
+      top: scrollToEl.offsetTop - 70, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  });
+});
+
+
 // dots
-// const dotsContainer = document.getElementsByClassName('js-scooter-dots')[0];
-// let dots = document.getElementsByClassName('js-scooter-dot');
-// for (var i = 0; i < 14; i++) {
-//   let clonedNode = dots[0].cloneNode(true);
-//   clonedNode.style.top = rand() + '%';
-//   clonedNode.style.left = rand() + '%';
-//   dotsContainer.appendChild(clonedNode);
-// }
+let initDots = function() {
+  let dots = document.getElementsByClassName('js-scooter-dot');
+  forEach.call(dots, function(el) {
+    el.addEventListener(hoverEvent, function(event) {
+      event.target.classList.toggle('hover');
+    });
+    if (hoverEvent === 'mouseenter') {
+      el.addEventListener('mouseleave', function(event) {
+        event.target.classList.toggle('hover');
+      })
+    }
+  });
+}
 
 // swap dom
 let media = window.matchMedia('(max-width: 910px)');
 let contents = [];
 let desktop = document.getElementsByClassName('js-desktop-contents');
 let mobile = document.getElementsByClassName('js-mobile-contents');
-let map = Array.prototype.map;
-
-let clickEvent = typeof window.ontouchstart === 'undefined' ? 'click' : 'touchstart';
 
 map.call(desktop, function(el, i) {
   contents[i] = el.innerHTML;
@@ -46,6 +72,7 @@ const swapContents = function(mq) {
       el.innerHTML = contents[i];
     });
   }
+  initDots();
 }
 
 media.addListener(swapContents);
@@ -60,6 +87,8 @@ let toggleMobileNav = function() {
 let mobileArrow = document.getElementsByClassName('js-mobile-nav-arrow')[0];
 let mobileNav = document.getElementsByClassName('js-site-nav')[0];
 mobileArrow.addEventListener(clickEvent, toggleMobileNav);
+
+// TODO: close the nav when you click a link
 
 // carousel
 let carouselContent = document.getElementsByClassName('js-carousel-content');
