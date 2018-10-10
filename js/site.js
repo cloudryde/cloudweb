@@ -1,20 +1,39 @@
-window.onscroll = function() {
-  let siteHeader = document.getElementsByClassName('js-siteHeader')[0];
-};
-
 let rand = function() {
   return Math.floor(Math.random() * Math.floor(100));
 }
 
 let map = Array.prototype.map;
+let forEach = Array.prototype.forEach;
 
 let clickEvent = typeof window.ontouchstart === 'undefined' ? 'click' : 'touchstart';
 let hoverEvent = typeof window.ontouchstart === 'undefined' ? 'mouseenter' : 'touchstart';
 
+// nav scroll
+let navLinks = document.getElementsByClassName('js-nav-link');
+map.call(navLinks, function(el) {
+  let hash = el.getAttribute('href');
+  let scrollToEl = document.getElementById(hash.substring(1));
+
+  if (!scrollToEl) {
+    return;
+  }
+
+  el.addEventListener(clickEvent, function(event) {
+    event.preventDefault();
+    // window.location.hash = hash;
+    window.scroll({
+      top: scrollToEl.offsetTop - 70, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  });
+});
+
+
 // dots
 let initDots = function() {
   let dots = document.getElementsByClassName('js-scooter-dot');
-  Array.prototype.forEach.call(dots, function(el) {
+  forEach.call(dots, function(el) {
     el.addEventListener(hoverEvent, function(event) {
       event.target.classList.toggle('hover');
     });
@@ -68,6 +87,8 @@ let toggleMobileNav = function() {
 let mobileArrow = document.getElementsByClassName('js-mobile-nav-arrow')[0];
 let mobileNav = document.getElementsByClassName('js-site-nav')[0];
 mobileArrow.addEventListener(clickEvent, toggleMobileNav);
+
+// TODO: close the nav when you click a link
 
 // carousel
 let carouselContent = document.getElementsByClassName('js-carousel-content');
