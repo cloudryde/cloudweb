@@ -12,6 +12,7 @@
   --content-gutter: 0;
   --content-width: 1200px;
   --carousel-transparency: .3;
+  --carousel-speed: .3s;
   --site-header-top: 60px;
 }
 
@@ -212,6 +213,64 @@ img {
   max-width: 483px;
 }
 
+.scooterContainer {
+  position: relative;
+}
+
+.scooterDots {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.scooterDot {
+  background: var(--aqua-green);
+  border-radius: 4px;
+  height: 8px;
+  position: absolute;
+  width: 8px;
+}
+
+.scooterDot1 {
+  left: 28.2%;
+  top: 12.3%;
+}
+
+.scooterDot2 {
+  left: 42.2%;
+  top: 74.3%;
+}
+
+.scooterDot3 {
+  left: 83.2%;
+  top: 78%;
+}
+
+.scooterDotTitle {
+  background: var(--aqua-green);
+  border-radius: 24px;
+  color: #fff;
+  cursor: default;
+  font-size: 20px;
+  font-weight: bold;
+  left: 0;
+  line-height: 1;
+  opacity: 0;
+  padding: 16px 22px 14px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) translateY(-75%);
+  transition: opacity .2s ease, transform .2s ease;
+  white-space: nowrap;
+}
+
+.scooterDot:hover .scooterDotTitle {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .imageryContainer {
   grid-column: span 5;
   grid-column-end: -1;
@@ -381,6 +440,38 @@ img {
 
 .carouselIndicator:not(:last-child) {
   margin-right: 5px;
+}
+
+.carouselPhone,
+.carouselContentContainer {
+  position: relative;
+}
+
+.carouselPhone {
+  z-index: 3;
+}
+
+.carouselContent,
+.carouselContent img {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carouselContent img {
+  opacity: 0;
+  transition: opacity var(--carousel-speed) ease var(--carousel-speed), visibility 0s ease var(--carousel-speed), z-index 0s ease 0s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.carouselContent img.show {
+  opacity: 1;
+  transition: opacity var(--carousel-speed) ease 0s, visibility 0s ease 0s, z-index 0s ease 0s;
+  visibility: visible;
+  z-index: 2;
 }
 
 .suggestBackground {

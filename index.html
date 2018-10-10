@@ -47,6 +47,17 @@
         <div class="js-desktop-contents imageryContainer">
           <div class="scooterContainer">
             <img src="img/scooter.png" class="scooterImage" />
+            <div class="scooterDots js-scooter-dots">
+              <div class="scooterDot scooterDot1 js-scooter-dot">
+                <div class="scooterDotTitle">Scan On</div>
+              </div>
+              <div class="scooterDot scooterDot2 js-scooter-dot">
+                <div class="scooterDotTitle">Ride</div>
+              </div>
+              <div class="scooterDot scooterDot3 js-scooter-dot">
+                <div class="scooterDotTitle">Hop Off</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +88,7 @@
           </div> -->
         </div><!-- .etiquetteRow -->
       </div>
-      <div class="content imageryContent carouselContent" id="apps">
+      <div class="content imageryContent" id="apps">
         <div class="details">
           <h1 class="sectionTitle">Ride the Future</h1>
           <div class="js-mobile-contents imageryContainer"></div>
@@ -87,9 +98,17 @@
         </div>
         <div class="js-desktop-contents imageryContainer">
           <div class="carouselContainer">
-            <div class="carouselArrow carouselArrowLeft"></div>
-            <img src="img/empty-phone.png" />
-            <div class="carouselArrow carouselArrowRight"></div>
+            <div class="carouselArrow carouselArrowLeft js-carousel-left"></div>
+            <div class="carouselContentContainer">
+              <div class="carouselContent">
+                <img class="js-carousel-content show" src="img/Detail@2x.png" />
+                <img class="js-carousel-content" src="img/Scooter Detail@2x.png" />
+                <img class="js-carousel-content" src="img/Reciept@2x.png" />
+                <img class="js-carousel-content" src="img/RideHistory@2x.png" />
+              </div>
+              <img src="img/empty-phone.png" class="carouselPhone" />
+            </div>
+            <div class="carouselArrow carouselArrowRight js-carousel-right"></div>
            <!--  <ul class="carouselProgress">
               <li class="carouselIndicator active"></li>
               <li class="carouselIndicator"></li>
