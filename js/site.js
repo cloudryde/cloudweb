@@ -6,24 +6,31 @@ let rand = function() {
   return Math.floor(Math.random() * Math.floor(100));
 }
 
+let map = Array.prototype.map;
+
+let clickEvent = typeof window.ontouchstart === 'undefined' ? 'click' : 'touchstart';
+let hoverEvent = typeof window.ontouchstart === 'undefined' ? 'mouseenter' : 'touchstart';
+
 // dots
-// const dotsContainer = document.getElementsByClassName('js-scooter-dots')[0];
-// let dots = document.getElementsByClassName('js-scooter-dot');
-// for (var i = 0; i < 14; i++) {
-//   let clonedNode = dots[0].cloneNode(true);
-//   clonedNode.style.top = rand() + '%';
-//   clonedNode.style.left = rand() + '%';
-//   dotsContainer.appendChild(clonedNode);
-// }
+let initDots = function() {
+  let dots = document.getElementsByClassName('js-scooter-dot');
+  Array.prototype.forEach.call(dots, function(el) {
+    el.addEventListener(hoverEvent, function(event) {
+      event.target.classList.toggle('hover');
+    });
+    if (hoverEvent === 'mouseenter') {
+      el.addEventListener('mouseleave', function(event) {
+        event.target.classList.toggle('hover');
+      })
+    }
+  });
+}
 
 // swap dom
 let media = window.matchMedia('(max-width: 910px)');
 let contents = [];
 let desktop = document.getElementsByClassName('js-desktop-contents');
 let mobile = document.getElementsByClassName('js-mobile-contents');
-let map = Array.prototype.map;
-
-let clickEvent = typeof window.ontouchstart === 'undefined' ? 'click' : 'touchstart';
 
 map.call(desktop, function(el, i) {
   contents[i] = el.innerHTML;
@@ -46,6 +53,7 @@ const swapContents = function(mq) {
       el.innerHTML = contents[i];
     });
   }
+  initDots();
 }
 
 media.addListener(swapContents);

@@ -14,6 +14,13 @@
   --carousel-transparency: .3;
   --carousel-speed: .3s;
   --site-header-top: 60px;
+  --scooter-dot: 8px;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(0.1, 0.1); opacity: 0; }
+  50% { opacity: 1; }
+  100% {transform: scale(1.2, 1.2); opacity: 0; }
 }
 
 * {
@@ -225,27 +232,50 @@ img {
   width: 100%;
 }
 
+.scooterDotWrap {
+  padding: 30px;
+  position: absolute;
+}
+
 .scooterDot {
   background: var(--aqua-green);
   border-radius: 4px;
-  height: 8px;
+  height: var(--scooter-dot);
+  left: 50%;
   position: absolute;
-  width: 8px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: var(--scooter-dot);
+}
+
+.scooterDot::before {
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite; 
+  border: 4px solid var(--aqua-green);
+  border-radius: 30px;
+  content: '';
+  display: block;
+  height: calc(var(--scooter-dot)*2);
+  left: calc(var(--scooter-dot)*-1);
+  opacity: 0;
+  position: absolute;
+  top: calc(var(--scooter-dot)*-1);
+  width: calc(var(--scooter-dot)*2);
 }
 
 .scooterDot1 {
-  left: 28.2%;
-  top: 12.3%;
+  left: 21.2%;
+  top: 6.3%;
 }
 
 .scooterDot2 {
-  left: 42.2%;
-  top: 74.3%;
+  left: 35.2%;
+  top: 69.3%;
 }
 
 .scooterDot3 {
-  left: 83.2%;
-  top: 78%;
+  left: 76.2%;
+  top: 73%;
 }
 
 .scooterDotTitle {
@@ -255,20 +285,31 @@ img {
   cursor: default;
   font-size: 20px;
   font-weight: bold;
-  left: 0;
+  left: 50%;
   line-height: 1;
   opacity: 0;
   padding: 16px 22px 14px;
   position: absolute;
   top: 0;
-  transform: translateX(-50%) translateY(-75%);
+  transform: translateX(-50%) translateY(30px);
   transition: opacity .2s ease, transform .2s ease;
   white-space: nowrap;
 }
 
-.scooterDot:hover .scooterDotTitle {
+.scooterDotTitle::before {
+  border: 7px solid transparent;
+  border-bottom-color: var(--aqua-green);
+  content: '';
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: -14px;
+  transform: translateX(-50%);
+}
+
+.scooterDotWrap.hover .scooterDotTitle {
   opacity: 1;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(50px);
 }
 
 .imageryContainer {
