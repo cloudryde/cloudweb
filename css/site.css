@@ -15,6 +15,9 @@
   --carousel-speed: .3s;
   --site-header-top: 30px;
   --scooter-dot: 8px;
+
+  --z-index-nav: 1;
+  --z-index-nav-controls: 2;
 }
 
 @keyframes pulsate {
@@ -634,12 +637,6 @@ img {
     --grid-column-count: 6;
   }
 
-   .siteHeader .logo {
-    background: url('../img/logo-shape.svg')no-repeat;
-    height: 26px;
-    width: 60px;
-  }
-
   .details {
     grid-column: span 3;
   }
@@ -662,12 +659,21 @@ img {
 
 @media (max-width: 910px) {
   :root {
+    --nav-transition-time: .5s;
+    --nav-link-transition-delay: .25s;
+  }
+
+  .siteHeader .logo {
+    background-image: url('../img/logo-shape.svg');
+    position: relative;
+    width: 49px;
+    z-index: var(--z-index-nav-controls);
   }
 
   .mobileNavArrow {
     display: block;
     transition: transform .2s ease;
-    z-index: 2;
+    z-index: var(--z-index-nav-controls);
   }
 
   .mobileNavArrow.swap {
@@ -677,13 +683,13 @@ img {
   .nav {
     background: var(--dodger-blue);
     display: block;
-    height: 60vh;
-    padding: var(--site-header-top) 40px 40px;
+    height: 100vh;
+    padding: calc(var(--site-header-top)*3) var(--content-gutter) 40px;
     position: fixed;
     top: -100vh;
-    transition: top .5s ease;
+    transition: top var(--nav-transition-time) ease;
     width: 100%;
-    z-index: 1;
+    z-index: var(--z-index-nav);
   }
 
   .nav.show {
@@ -698,7 +704,26 @@ img {
   .navLink {
     font-size: 22px;
     line-height: 1.4;
+    opacity: 0;
     padding: 10px 0;
+    transition: none;
+  }
+
+  .nav.show .navLink {
+    opacity: 1;
+    transition: opacity .4s ease var(--nav-link-transition-delay);
+  }
+
+  .navLinkContainer:nth-child(2) .navLink {
+    transition-delay: calc(var(--nav-link-transition-delay) + .05s);
+  }
+
+  .navLinkContainer:nth-child(3) .navLink {
+    transition-delay: calc(var(--nav-link-transition-delay) + .15s);
+  }
+
+  .navLinkContainer:nth-child(4) .navLink {
+    transition-delay: calc(var(--nav-link-transition-delay) + .2s);
   }
 
   .navLink::after {
@@ -784,8 +809,8 @@ img {
 }
 
 @media (max-width: 550px) {
-  .content {
-    padding: 0 30px;
+  :root {
+    --content-gutter: 30px;
   }
 }
 

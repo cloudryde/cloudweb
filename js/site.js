@@ -109,8 +109,9 @@ let toggleMobileNav = function() {
 let mobileArrow = document.getElementsByClassName('js-mobile-nav-arrow')[0];
 let mobileNav = document.getElementsByClassName('js-site-nav')[0];
 mobileArrow.addEventListener(clickEvent, toggleMobileNav);
-
-// TODO: close the nav when you click a link
+map.call(navLinks, function(el) {
+  el.addEventListener(clickEvent, toggleMobileNav);
+});
 
 // carousel
 let carouselContent = document.getElementsByClassName('js-carousel-content');
