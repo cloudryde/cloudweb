@@ -769,6 +769,10 @@ img {
 }
 
 @media (max-width: 645px) {
+  .main .content {
+    margin-bottom: 100px;
+  }
+
   .details {
     grid-column: span var(--grid-column-count);
   }
@@ -805,6 +809,10 @@ img {
 
   .socialIcon:first-child {
     margin-left: 0;
+  }
+
+  .suggest {
+    padding-top: 100px;
   }
 }
 
