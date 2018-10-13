@@ -22,7 +22,7 @@ map.call(navLinks, function(el) {
     event.preventDefault();
     // window.location.hash = hash;
     window.scroll({
-      top: scrollToEl.offsetTop - 130, 
+      top: scrollToEl.offsetTop - 100, 
       left: 0, 
       behavior: 'smooth' 
     });
