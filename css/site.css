@@ -634,11 +634,11 @@ img {
     --grid-column-count: 6;
   }
 
-   .logo {
-  background: url('../img/logo-shape.svg')no-repeat;
-  height: 26px;
-  width: 50px;
-}
+   .siteHeader .logo {
+    background: url('../img/logo-shape.svg')no-repeat;
+    height: 26px;
+    width: 60px;
+  }
 
   .details {
     grid-column: span 3;

@@ -20,7 +20,8 @@ map.call(navLinks, function(el) {
 
   el.addEventListener(clickEvent, function(event) {
     event.preventDefault();
-    // window.location.hash = hash;
+    history.replaceState({}, '', event.target.href);
+
     window.scroll({
       top: scrollToEl.offsetTop - 100, 
       left: 0, 
@@ -29,6 +30,27 @@ map.call(navLinks, function(el) {
   });
 });
 
+let contentSections = document.getElementsByClassName('js-content');
+let activeIndex = 0;
+
+// change nav links on scroll
+ window.onscroll = function() {
+  let activeLink = document.getElementsByClassName('js-nav-active')[0];
+  
+  forEach.call(contentSections, function(el, index) {
+    if (window.pageYOffset > el.offsetTop - 120) {
+      activeIndex = index;
+    }
+  });
+
+  forEach.call(navLinks, function(el, index) {
+    el.classList.remove('active');
+    el.classList.remove('js-nav-active');
+  });
+
+  navLinks[activeIndex].classList.add('active');
+  navLinks[activeIndex].classList.add('js-nav-active');
+};
 
 // dots
 let initDots = function() {
